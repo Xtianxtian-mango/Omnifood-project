@@ -1,0 +1,388 @@
+/* rem and em do not depend on html font-size in media queries
+insted, 1rem = 1em = 16px */
+
+/* ************************************ */
+
+/* 1350 width sa webpage nga mag sugod na ug apply sa media /16px is
+default font-size sa hmtl = 84em */
+
+/* 1350px to 1201x width screen (smaller desktop) */
+/* breakpoint:1350px */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 4.8rem 0 0;
+  }
+}
+
+/* 1200px  to 993px (landscape tables) */
+/* breakpoint: 1200px*/
+@media (max-width: 75em) {
+  html {
+    /* 9px/16px  */
+    font-size: 56.25%;
+  }
+  .container {
+    padding: 0 8.8rem;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+  .grid-cols-3 {
+    column-gap: 4.8rem;
+  }
+  .header {
+    padding: 0 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+  .testimonials-container {
+    padding: 9.6rem 4.8rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 992px to 770px large(laptops) */
+/* breakpoint:992px */
+@media (max-width: 62em) {
+  html {
+    /* 8px/16px  */
+    font-size: 50%;
+  }
+  /* .header {
+    padding: 0 8rem;
+  } */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+  .hero-img {
+    width: 60%;
+  }
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .logos img {
+    height: 2.4rem;
+  }
+  .step-number {
+    font-size: 7.4rem;
+  }
+  .grid-cols-3 {
+    column-gap: 3.2rem;
+  }
+  .meal-description {
+    padding: 2.4rem;
+  }
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+  .testimonials {
+    column-gap: 9.6rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 4.8rem;
+  }
+  .container-login-form {
+    grid-template-columns: 3fr 2fr;
+  }
+  .login-form {
+    grid-template-columns: 1fr;
+  }
+  .btn-login-form-grid {
+    margin-top: 1.2rem;
+  }
+}
+
+/* Breakpoint of 768px and mobile navigation icon is now enable at this point*/
+@media (max-width: 48em) {
+  /* start of mobile navigation */
+  .btn-mobile-nav {
+    display: block;
+  }
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    /* for center position */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* for animation */
+    transition: all 0.5s ease-in;
+
+    /* para inig click nimo sa menu-icon mo pop-up tong navigation but in 
+            X-axis direction*/
+    transform: translateX(100%);
+
+    /* proper hide the navigation properly */
+    /* 1st step: Hide it visually */
+    opacity: 0;
+
+    /* 2nd: make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3rd: hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /* for vertiacal align of navigation */
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  /* font-size of navigation */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  /* mechanism for show and hide the navigation */
+  /* mechanism sad ni para makita nimo ang icon, kay naa si .nav-open*/
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+
+    /* kung mo appear na ang mga navigation mo steady siya dili mo lihok   */
+    transform: translateX(0);
+  }
+
+  /* for close icon to be appear when click the menu icon */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* for menu icon to be disappear, when close icon is appear */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+  /* end of mobile navigation  */
+
+  .footer-grid {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 4.8rem;
+  }
+  .container {
+    padding: 0 4.8rem;
+  }
+}
+/* 668px*/
+@media (max-width: 41.75em) {
+  .feature-grid-4-cols {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6.4rem;
+  }
+  .logos img {
+    height: 2rem;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+  .logo-col,
+  .adress-col {
+    grid-column: span 3;
+  }
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .section-meals {
+    padding: 0 0 9.6rem 0;
+  }
+
+  .footer-heading {
+    margin-bottom: 2rem;
+  }
+  .footer-link-flex {
+    gap: 2rem;
+  }
+
+  .pricing-container {
+    padding: 3.2rem;
+  }
+  .login-box {
+    padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+  }
+  .container-login-form {
+    grid-template-columns: 2fr 1.5fr;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .list {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+}
+
+/* 577px */
+@media (max-width: 36.125em) {
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 2rem;
+  }
+  .section-hero {
+    padding: 0 0 9.6rem 0;
+  }
+  .hero {
+    padding: 6.4rem;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 6.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pricing-container {
+    /* para ang container mo stretch kutob sa -1, then para ma center ang 
+        item is justify-self:center */
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+  .step-img-box-2 {
+    grid-row: 4;
+  }
+}
+
+/* 500px */
+@media (max-width: 31.25em) {
+  .hero {
+    padding: 6.4rem 6.4rem 0 6.4rem;
+  }
+  .logos img {
+    height: 1.5rem;
+  }
+  .section-how {
+    padding: 8rem 0 8rem;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meal {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+  .grid-cols-3 {
+    row-gap: 4.8rem;
+  }
+  .testimonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gallery {
+    padding: 1.6rem 3.2rem;
+  }
+  .feature-grid-4-cols {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container-login-form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .login-img-box {
+    height: 50rem;
+    grid-row: 1;
+  }
+}
+
+/* 481px */
+@media (max-width: 30.125em) {
+  .hero {
+    padding: 4.8rem 4.8rem 0 4.8rem;
+  }
+  .container {
+    padding: 0 3.2rem;
+  }
+  .login-img-box {
+    height: 40rem;
+  }
+}
+
+/* 425px */
+@media (max-width: 26.625em) {
+  .heading-primary {
+    font-size: 3.2rem;
+  }
+  .hero-description {
+    font-size: 1.6rem;
+  }
+  .btn-hero:link,
+  .btn-hero:visited {
+    font-size: 1.8rem;
+  }
+  .footer-grid {
+    column-gap: 3.2rem;
+  }
+  .footer-link {
+    font-size: 1.2rem;
+  }
+}
+/* 375px */
+@media (max-width: 23.5em) {
+  .container {
+    padding: 0 2.4rem;
+  }
+  .footer-grid {
+    column-gap: 2.4rem;
+  }
+  .hero {
+    padding: 3.2rem 3.2rem 0 3.2rem;
+  }
+  .logos img {
+    height: 1.2rem;
+  }
+  .heading-secondary {
+    font-size: 3rem;
+  }
+  .step-number {
+    font-size: 6.2rem;
+  }
+  .heading-tertiary {
+    font-size: 2rem;
+  }
+  .step-description {
+    font-size: 1.6rem;
+  }
+  .testimonials-heading {
+    font-size: 3.6rem;
+    margin-bottom: 8rem;
+  }
+  .plan-details {
+    font-size: 1.4rem;
+  }
+}
